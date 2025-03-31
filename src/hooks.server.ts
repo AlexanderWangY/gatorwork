@@ -1,53 +1,34 @@
-// src/hooks.server.ts
-import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public'
-import { createServerClient } from '@supabase/ssr'
-import type { Handle } from '@sveltejs/kit'
+import { auth } from '$lib/auth';
+import { redirect } from '@sveltejs/kit';
+import { svelteKitHandler } from 'better-auth/svelte-kit';
 
-export const handle: Handle = async ({ event, resolve }) => {
-  event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
-    cookies: {
-      getAll: () => event.cookies.getAll(),
-      /**
-       * SvelteKit's cookies API requires `path` to be explicitly set in
-       * the cookie options. Setting `path` to `/` replicates previous/
-       * standard behavior.
-       */
-      setAll: (cookiesToSet) => {
-        cookiesToSet.forEach(({ name, value, options }) => {
-          event.cookies.set(name, value, { ...options, path: '/' })
-        })
-      },
-    },
-  })
+const protectedRoutes: string[] = ['/account'];
 
-  /**
-   * Unlike `supabase.auth.getSession()`, which returns the session _without_
-   * validating the JWT, this function also calls `getUser()` to validate the
-   * JWT before returning the session.
-   */
-  event.locals.safeGetSession = async () => {
-    const {
-      data: { session },
-    } = await event.locals.supabase.auth.getSession()
-    if (!session) {
-      return { session: null, user: null }
-    }
+export async function handle({ event, resolve }) {
+	// const { data: session } = await authClient.getSession();
 
-    const {
-      data: { user },
-      error,
-    } = await event.locals.supabase.auth.getUser()
-    if (error) {
-      // JWT validation has failed
-      return { session: null, user: null }
-    }
+	// if (!session && event.url.pathname === '/account') {
+	//     console.log('redirecting to login');
 
-    return { session, user }
-  }
+	// 	return new Response(null, {
+	// 		status: 403,
+	// 		headers: {
+	// 			location: '/login'
+	// 		}
+	// 	});
+	// }
 
-  return resolve(event, {
-    filterSerializedResponseHeaders(name) {
-      return name === 'content-range' || name === 'x-supabase-api-version'
-    },
-  })
+	const headers = event.request.headers;
+
+    const isProtectedRoute = protectedRoutes.some((route) => event.url.pathname.startsWith(route));
+
+	const session = await auth.api.getSession({
+		headers: headers
+	});
+
+	if (!session && isProtectedRoute) {
+		throw redirect(303, '/login');
+	}
+
+	return svelteKitHandler({ event, resolve, auth });
 }
