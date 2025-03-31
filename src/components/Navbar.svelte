@@ -11,7 +11,10 @@
 <div class="flex min-h-16 w-full flex-row items-center justify-between px-5 lg:px-56">
 	<!-- Logo + Name -->
 	<div class="flex flex-row items-center justify-center gap-12">
-		<a href="/" class="flex flex-row items-center justify-center gap-4 select-none hover:cursor-pointer">
+		<a
+			href="/"
+			class="flex flex-row items-center justify-center gap-4 select-none hover:cursor-pointer"
+		>
 			<img src="/Logo.svg" alt="GatorMarket Logo" />
 			<p class="text-xl font-black">GatorMarket</p>
 		</a>
@@ -52,7 +55,7 @@
 		{#if sessionData}
 			<a class="hover:underline" href="/account">My Account</a>
 		{:else}
-			<div class="gap-4 flex-row flex">
+			<div class="flex flex-row gap-4">
 				<a class="hover:underline" href="/login">Login</a>
 				<a class="hover:underline" href="/signup">Sign Up</a>
 			</div>

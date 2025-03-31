@@ -1,7 +1,6 @@
 // src/app.d.ts
-import 'unplugin-icons/types/svelte'
+import 'unplugin-icons/types/svelte';
 
 declare global {
-  namespace App {
-  }
+	namespace App {}
 }

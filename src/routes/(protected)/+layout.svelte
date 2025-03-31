@@ -1,22 +1,22 @@
 <script lang="ts">
-	import { authClient } from "$lib/auth-client";
+	import { authClient } from '$lib/auth-client';
 
-    export async function load() {
-        const session = authClient.useSession();
+	export async function load() {
+		const session = authClient.useSession();
 
-        if (!session) {
-            return {
-                status: 403,
-                redirect: "/login",
-            };
-        }
+		if (!session) {
+			return {
+				status: 403,
+				redirect: '/login'
+			};
+		}
 
-        return {
-            props: {
-                session,
-            },
-        };
-    }
+		return {
+			props: {
+				session
+			}
+		};
+	}
 </script>
 
 <slot />

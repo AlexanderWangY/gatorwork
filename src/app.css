@@ -2,57 +2,57 @@
 @plugin '@tailwindcss/typography';
 
 @font-face {
-    font-family: 'Lato';
-    font-weight: 300;
-    src: url('/fonts/Lato/Lato-Light.ttf') format('truetype');
+	font-family: 'Lato';
+	font-weight: 300;
+	src: url('/fonts/Lato/Lato-Light.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Lato';
-    font-weight: 400;
-    src: url('/fonts/Lato/Lato-Regular.ttf') format('truetype');
+	font-family: 'Lato';
+	font-weight: 400;
+	src: url('/fonts/Lato/Lato-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Lato';
-    font-weight: 700;
-    src: url('/fonts/Lato/Lato-Bold.ttf') format('truetype');
+	font-family: 'Lato';
+	font-weight: 700;
+	src: url('/fonts/Lato/Lato-Bold.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Lato';
-    font-weight: 900;
-    src: url('/fonts/Lato/Lato-Black.ttf') format('truetype');
+	font-family: 'Lato';
+	font-weight: 900;
+	src: url('/fonts/Lato/Lato-Black.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Lato';
-    font-weight: 300;
-    font-style: italic;
-    src: url('/fonts/Lato/Lato-LightItalic.ttf') format('truetype');
+	font-family: 'Lato';
+	font-weight: 300;
+	font-style: italic;
+	src: url('/fonts/Lato/Lato-LightItalic.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Lato';
-    font-weight: 400;
-    font-style: italic;
-    src: url('/fonts/Lato/Lato-Italic.ttf') format('truetype');
+	font-family: 'Lato';
+	font-weight: 400;
+	font-style: italic;
+	src: url('/fonts/Lato/Lato-Italic.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Lato';
-    font-weight: 700;
-    font-style: italic;
-    src: url('/fonts/Lato/Lato-BoldItalic.ttf') format('truetype');
+	font-family: 'Lato';
+	font-weight: 700;
+	font-style: italic;
+	src: url('/fonts/Lato/Lato-BoldItalic.ttf') format('truetype');
 }
 
 @theme {
-    --font-sans: 'Lato', sans-serif;
+	--font-sans: 'Lato', sans-serif;
 
-    --color-brand-white: #FFFBFA;
-    --color-brand-black: #333333;
-    --color-brand-gray: #5B5B5B;
-    --color-brand-orange: #FF894A;
-    --color-brand-light-orange: #FFD08E;
-    --color-brand-blue: #4057EA;
+	--color-brand-white: #fffbfa;
+	--color-brand-black: #333333;
+	--color-brand-gray: #5b5b5b;
+	--color-brand-orange: #ff894a;
+	--color-brand-light-orange: #ffd08e;
+	--color-brand-blue: #4057ea;
 }

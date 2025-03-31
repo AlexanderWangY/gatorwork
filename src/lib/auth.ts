@@ -6,16 +6,15 @@ export const auth = betterAuth({
 	database: prismaAdapter(prisma, {
 		provider: 'postgresql'
 	}),
-  emailAndPassword: {
-    enabled: true,
-    requireEmailVerification: false
-  },
-  emailVerification: {
-    sendVerificationEmail: async ({ user, url, token }) => {
-      console.log(`Send email to ${user.email} with url ${url}`);
-    },
-    sendOnSignUp: true,
-    expiresIn: 3600
-  }
-
+	emailAndPassword: {
+		enabled: true,
+		requireEmailVerification: false
+	},
+	emailVerification: {
+		sendVerificationEmail: async ({ user, url, token }) => {
+			console.log(`Send email to ${user.email} with url ${url}: ${token}`);
+		},
+		sendOnSignUp: true,
+		expiresIn: 3600
+	}
 });

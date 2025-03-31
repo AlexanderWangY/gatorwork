@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { authClient } from '$lib/auth-client';
 	import Button from '../../../components/Button.svelte';
 
 	let email = '';
@@ -8,14 +10,33 @@
 
 	let isLoading = false;
 
-	const handleSubmit = () => {
+	const handleSubmit = async () => {
 		if (password !== confirmPassword) {
-			errorMessage = 'Passwords do not match!';
-		} else {
-			errorMessage = '';
-			console.log('Form submitted', { email, password });
-			// Add form submission logic (e.g., API request)
+			errorMessage = 'Passwords do not match';
+			return;
 		}
+
+		isLoading = true;
+
+		await authClient.signUp.email(
+			{
+				email,
+				password,
+				name: 'UF Student',
+				callbackURL: '/account'
+			},
+			{
+				onError: (ctx) => {
+					errorMessage = ctx.error.message;
+					isLoading = false;
+				},
+				onSuccess: async () => {
+					await goto('/account');
+				}
+			}
+		);
+
+		isLoading = false;
 	};
 </script>
 

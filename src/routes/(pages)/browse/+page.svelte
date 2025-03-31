@@ -1,8 +1,7 @@
 <script lang="ts">
-    import { page } from '$app/state';
+	import { page } from '$app/state';
+</script>
 
-  </script>
-  
-  <div>
-    Browsing for {page.url.searchParams.get('q') || 'all items'}
-  </div>
+<div>
+	Browsing for {page.url.searchParams.get('q') || 'all items'}
+</div>

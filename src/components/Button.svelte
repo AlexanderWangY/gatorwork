@@ -9,8 +9,8 @@
 	export let isLoading: boolean = false; // Loading state
 	export let customClass: string = ''; // Additional custom classes
 	export let onClick: () => void = () => {}; // Click handler
-	export let type: "button" | "reset" | "submit" = 'button'; // Button type
-	export let fullWidth: boolean = false; // Full width button	
+	export let type: 'button' | 'reset' | 'submit' = 'button'; // Button type
+	export let fullWidth: boolean = false; // Full width button
 
 	// Dynamic classes for styling
 	const baseClasses = 'font-bold rounded-md py-1.5 px-8 transition-all';
@@ -27,11 +27,16 @@
 	};
 
 	// Compute final button classes
-	const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${customClass} ${fullWidth ? "w-full" : "w-auto"} flex justify-center items-center`;
+	const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${customClass} ${fullWidth ? 'w-full' : 'w-auto'} flex justify-center items-center`;
 	const spinnerSize = size === 'small' ? '1rem' : size === 'medium' ? '1.5rem' : '2rem';
 </script>
 
-<button type={type} class={buttonClasses} disabled={isDisabled} on:click={isDisabled || isLoading ? undefined : onClick}>
+<button
+	{type}
+	class={buttonClasses}
+	disabled={isDisabled}
+	on:click={isDisabled || isLoading ? undefined : onClick}
+>
 	{#if isLoading}
 		<Spinner color="#FFD08E" size={spinnerSize} />
 	{:else}

@@ -60,7 +60,7 @@
 				<p class="mb-4 text-sm text-red-500">{errorMessage}</p>
 			{/if}
 
-				<Button text="Log In" variant="primary" type="submit" {isLoading} fullWidth />
+			<Button text="Log In" variant="primary" type="submit" {isLoading} fullWidth />
 		</form>
 
 		<p class="mt-4 text-center text-sm">
