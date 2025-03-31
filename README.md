@@ -47,7 +47,7 @@ Welcome to **GatorMarket** – a student marketplace built _by_ Gators, _for_ Ga
 5. Start the development server:
 
    ```bash
-   pnpm run dev
+   pnpm dev
    ```
 
 6. Open your browser and go to [localhost:5173](http://localhost:5173) 🌍
