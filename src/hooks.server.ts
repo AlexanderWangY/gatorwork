@@ -2,7 +2,7 @@ import { auth } from '$lib/auth';
 import { redirect } from '@sveltejs/kit';
 import { svelteKitHandler } from 'better-auth/svelte-kit';
 
-const protectedRoutes: string[] = ['/account', '/create'];
+const protectedRoutes: string[] = ['/account', '/create', '/sell'];
 
 export async function handle({ event, resolve }) {
 	// const { data: session } = await authClient.getSession();

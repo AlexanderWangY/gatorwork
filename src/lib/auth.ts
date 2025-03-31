@@ -1,6 +1,7 @@
 import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import { prisma } from './server/prisma';
+import { sendAuthEmail } from './server/email';
 
 export const auth = betterAuth({
 	database: prismaAdapter(prisma, {
@@ -8,11 +9,11 @@ export const auth = betterAuth({
 	}),
 	emailAndPassword: {
 		enabled: true,
-		requireEmailVerification: false
+		requireEmailVerification: true
 	},
 	emailVerification: {
-		sendVerificationEmail: async ({ user, url, token }) => {
-			console.log(`Send email to ${user.email} with url ${url}: ${token}`);
+		sendVerificationEmail: async ({ user, url }) => {
+			await sendAuthEmail(user, url);
 		},
 		sendOnSignUp: true,
 		expiresIn: 3600

@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '$app/navigation';
 	import Button from '../components/Button.svelte';
 	import Footer from '../components/Footer.svelte';
 	import Navbar from '../components/Navbar.svelte';
@@ -26,7 +27,7 @@
 			</h2>
 		</div>
 		<div class="flex flex-row items-center justify-center gap-5">
-			<Button text="Sign Up" variant="primary" />
+			<Button text="Browse" variant="primary" onClick={() => goto('/browse?q=Top&tf=3600')} />
 			<a class="underline-offset-4 hover:underline" href="/create">Make a listing</a>
 		</div>
 	</div>

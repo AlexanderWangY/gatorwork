@@ -47,7 +47,7 @@
 					}
 				]}
 			/>
-			<a class="hover:underline" href="/profile">Sell</a>
+			<a class="hover:underline" href="/sell">Sell</a>
 		</div>
 	</div>
 

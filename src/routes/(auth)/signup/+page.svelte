@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import { authClient } from '$lib/auth-client';
 	import Button from '../../../components/Button.svelte';
 
@@ -8,11 +7,20 @@
 	let confirmPassword = '';
 	let errorMessage = '';
 
+	let sentVerificationEmail = false;
+
 	let isLoading = false;
 
 	const handleSubmit = async () => {
+		errorMessage = '';
+
 		if (password !== confirmPassword) {
 			errorMessage = 'Passwords do not match';
+			return;
+		}
+
+		if (!email.endsWith('@ufl.edu')) {
+			errorMessage = 'Please use your UF email';
 			return;
 		}
 
@@ -23,7 +31,7 @@
 				email,
 				password,
 				name: 'UF Student',
-				callbackURL: '/account'
+				callbackURL: '/login'
 			},
 			{
 				onError: (ctx) => {
@@ -31,11 +39,10 @@
 					isLoading = false;
 				},
 				onSuccess: async () => {
-					await goto('/account');
+					sentVerificationEmail = true;
 				}
 			}
 		);
-
 		isLoading = false;
 	};
 </script>
@@ -84,6 +91,10 @@
 
 			{#if errorMessage}
 				<p class="mb-4 text-sm text-red-500">{errorMessage}</p>
+			{/if}
+
+			{#if sentVerificationEmail}
+				<p class="mb-4 text-sm text-green-500">Verification email sent! Please check your inbox.</p>
 			{/if}
 
 			<div class="flex w-full">
