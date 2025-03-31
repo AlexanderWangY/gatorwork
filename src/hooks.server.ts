@@ -18,7 +18,7 @@ export async function handle({ event, resolve }) {
 	// 	});
 	// }
 
-	// const headers = event.request.headers;
+	const headers = event.request.headers;
 
 	const isProtectedRoute = protectedRoutes.some((route) => event.url.pathname.startsWith(route));
 
