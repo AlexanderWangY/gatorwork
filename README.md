@@ -1,38 +1,65 @@
-# sv
+# 🐊 GatorMarket
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+![GatorMarket Logo](./static/Logo.svg)
 
-## Creating a project
+### The Marketplace for UF Students! 🏫🎒📦
 
-If you're seeing this, you've probably already done this step. Congrats!
+Welcome to **GatorMarket** – a student marketplace built _by_ Gators, _for_ Gators! 🐊 Whether you're buying or selling textbooks, furniture, or even a scooter to cruise around campus, GatorMarket makes it easy and secure to trade with fellow UF students.
 
-```bash
-# create a new project in the current directory
-npx sv create
+## 🚀 Features
 
-# create a new project in my-app
-npx sv create my-app
-```
+- **UF Student-Only Access** 🎓 – Verified students only! No randoms from outside UF.
+- **Modern UI** 🎨 – Built with **SvelteKit**, making it blazing fast and smooth. (WIP)
+- **Secure Authentication** 🔐 – Session-based auth with enhanced security.
+- **Easy Listings** 📸 – Post your items in just a few taps! (WIP)
+- **Chat System** 💬 – Message buyers & sellers directly. (WIP)
+- **Optimized for Mobile & Web** 📱💻 – Trade on the go! (WIP)
 
-## Developing
+## 🛠️ Tech Stack
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- **Framework**: [SvelteKit](https://kit.svelte.dev/) ⚡
+- **Package Manager**: [pnpm](https://pnpm.io/) 🚀
+- **Database**: PostgreSQL 🐘 + [Prisma](https://www.prisma.io/) ORM
+- **Auth**: Secured with Better-Auth 🔐
 
-```bash
-npm run dev
+## 📦 Setup & Installation
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+1. Clone the repo:
 
-## Building
+   ```bash
+   git clone https://github.com/your-username/GatorMarket.git
+   cd GatorMarket
+   ```
 
-To create a production version of your app:
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+3. Start a postgres server (I use Neon)
+   Save DATABASE_URL and DIRECT_URL as seen in `example.env`, also generate a random secure token!
 
-```bash
-npm run build
-```
+4. Migrate all changes using Prisma Migrate
 
-You can preview the production build with `npm run preview`.
+   ```bash
+   pnpm exec prisma migrate deploy
+   ```
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+5. Start the development server:
+
+   ```bash
+   pnpm run dev
+   ```
+
+6. Open your browser and go to [localhost:5173](http://localhost:5173) 🌍
+
+## 🎭 Contributing
+
+We’d love for you to contribute! Feel free to open issues, submit PRs, or suggest features.
+
+## 📜 License
+
+MIT License. See `LICENSE` for details.
+
+---
+
+🚀 **Join the GatorMarket Revolution – Buy, Sell, and Connect with UF Students Today!** 🐊
