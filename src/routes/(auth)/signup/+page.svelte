@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { authClient } from '$lib/auth-client';
-	import Button from '../../../components/Button.svelte';
+	import Button from '../../../components/CustomButton.svelte';
 
 	let email = '';
 	let password = '';

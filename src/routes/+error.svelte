@@ -1,5 +1,5 @@
 <script>
-	import Button from '../components/Button.svelte';
+	import Button from '../components/CustomButton.svelte';
 	import { goto } from '$app/navigation';
 	import Navbar from '../components/Navbar.svelte';
 </script>

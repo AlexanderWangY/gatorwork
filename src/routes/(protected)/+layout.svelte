@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { authClient } from '$lib/auth-client';
+	import Navbar from '../../components/Navbar.svelte';
 
 	export async function load() {
 		const session = authClient.useSession();
@@ -19,4 +20,5 @@
 	}
 </script>
 
+<Navbar />
 <slot />

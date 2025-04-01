@@ -1,12 +1,13 @@
 <script>
-	import { goto } from '$app/navigation';
-	import Button from '../components/Button.svelte';
+	import { Button } from 'bits-ui';
 	import Footer from '../components/Footer.svelte';
 	import Navbar from '../components/Navbar.svelte';
+
+	import TablerArrowNarrowRight from '~icons/tabler/arrow-narrow-right';
 </script>
 
 <Navbar />
-<div class="flex w-full flex-col items-center justify-center pt-72 pb-36">
+<div class="flex w-full flex-col items-center justify-center overflow-hidden pt-72 pb-36">
 	<div class="flex flex-col items-center justify-center gap-5">
 		<div class="flex flex-col items-center justify-center gap-2">
 			<h1 class="text-center text-5xl font-normal">
@@ -27,10 +28,24 @@
 			</h2>
 		</div>
 		<div class="flex flex-row items-center justify-center gap-5">
-			<Button text="Browse" variant="primary" onClick={() => goto('/browse?q=Top&tf=3600')} />
-			<a class="underline-offset-4 hover:underline" href="/create">Make a listing</a>
+			<Button.Root
+				href="/browse?sort=Top&time=Recent"
+				class="bg-brand-orange text-brand-white rounded-md px-7 py-1.5 hover:cursor-pointer hover:bg-orange-300"
+				>Browse</Button.Root
+			>
+			<a
+				class="flex flex-row items-center justify-center gap-1 underline-offset-4 hover:underline"
+				href="/create"
+				>Make a listing
+				<TablerArrowNarrowRight class="text-brand-black inline-block w-5" />
+			</a>
 		</div>
 	</div>
+
+	<h1 class="lg:hidden">Medium</h1>
+	<h1 class="hidden sm:block lg:hidden">Small</h1>
+	<h1 class="hidden lg:block xl:hidden">Large</h1>
+	<h1 class="hidden xl:block">Extra Large</h1>
 
 	<div class="mt-36 flex w-full flex-col items-center justify-center gap-10">
 		<h2 class="text-lg font-normal italic">What are you looking for?</h2>

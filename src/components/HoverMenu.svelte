@@ -30,7 +30,7 @@
 
 	<!-- Dropdown menu -->
 	<div
-		class="bg-brand-white invisible absolute left-0 z-10 mt-0 w-48 origin-top-left scale-95 transform rounded-md opacity-0 shadow-md transition-all duration-200 ease-in-out group-hover:visible group-hover:scale-100 group-hover:opacity-100"
+		class="bg-brand-white invisible absolute left-0 z-10 mt-1 w-48 origin-top-left scale-95 transform rounded-md opacity-0 shadow-md transition-all duration-200 ease-in-out group-hover:visible group-hover:scale-100 group-hover:opacity-100"
 	>
 		<div class="bg-brand-white overflow-hidden rounded-md shadow-xs">
 			{#each menuItems as item, index (item.label)}

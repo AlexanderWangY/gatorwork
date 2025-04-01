@@ -17,6 +17,8 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
+		"@iconify-json/logos": "^1.2.4",
+		"@iconify-json/mdi": "^1.2.3",
 		"@iconify-json/tabler": "^1.2.17",
 		"@iconify/json": "^2.2.322",
 		"@sveltejs/adapter-auto": "^4.0.0",
@@ -49,6 +51,7 @@
 	"dependencies": {
 		"@prisma/client": "^6.5.0",
 		"better-auth": "^1.2.5",
+		"bits-ui": "^1.3.16",
 		"resend": "^4.2.0"
 	}
 }
