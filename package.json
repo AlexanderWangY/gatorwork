@@ -5,14 +5,15 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "prisma generate && vite build",
 		"preview": "vite preview",
 		"prepare": "husky",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"precommit": "pnpm run check && pnpm run lint"
+		"precommit": "pnpm run check && pnpm run lint",
+		"postinstall": "prisma generate"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
