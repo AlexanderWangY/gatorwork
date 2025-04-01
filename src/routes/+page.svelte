@@ -42,10 +42,10 @@
 		</div>
 	</div>
 
-	<h1 class="lg:hidden">Medium</h1>
+	<!-- <h1 class="lg:hidden">Medium</h1>
 	<h1 class="hidden sm:block lg:hidden">Small</h1>
 	<h1 class="hidden lg:block xl:hidden">Large</h1>
-	<h1 class="hidden xl:block">Extra Large</h1>
+	<h1 class="hidden xl:block">Extra Large</h1> -->
 
 	<div class="mt-36 flex w-full flex-col items-center justify-center gap-10">
 		<h2 class="text-lg font-normal italic">What are you looking for?</h2>
