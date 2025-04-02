@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { authClient } from '$lib/auth-client';
 	import Button from '../../../components/CustomButton.svelte';
 
@@ -15,7 +16,7 @@
 			{
 				email,
 				password,
-				callbackURL: '/'
+				callbackURL: page.url.searchParams.get('redirect') || '/account'
 			},
 			{
 				onError: (ctx) => {

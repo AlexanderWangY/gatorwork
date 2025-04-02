@@ -1,19 +1,17 @@
-import { authClient } from '$lib/auth-client';
-import type { Handle } from '@sveltejs/kit';
+import type { HandleClientError } from '@sveltejs/kit';
 
-export const handle: Handle = async ({ event, resolve }) => {
-	const { data: session } = await authClient.getSession();
+// src/hooks.client.ts
+export const handleError: HandleClientError = async ({ error, event, status }) => {
+	const errorId = crypto.randomUUID();
 
-	console.log('path', event.url.pathname);
+	// Log to Sentry/error tracking (example)
+	console.error(`[${errorId}] Client Error:`, { error, status, event });
 
-	if (event.url.pathname.startsWith('/account') && !session) {
-		return new Response(null, {
-			status: 403,
-			headers: {
-				location: '/login'
-			}
-		});
-	}
-
-	return resolve(event);
+	return {
+		message: 'Something went wrong. Our team has been notified.',
+		status,
+		errorId,
+		action: 'Please try again later or contact support if the issue persists.',
+		reference: `Error ID: ${errorId}`
+	};
 };
