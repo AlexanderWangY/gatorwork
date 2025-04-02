@@ -19,6 +19,7 @@ model User {
   name          String
   email         String
   emailVerified Boolean
+  onboarded     Boolean   @default(false)
   image         String?
   createdAt     DateTime
   updatedAt     DateTime

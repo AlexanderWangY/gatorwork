@@ -35,8 +35,8 @@ Welcome to **GatorMarket** – a student marketplace built _by_ Gators, _for_ Ga
    ```bash
    pnpm install
    ```
-3. Start a postgres server (I use Neon)
-   Save DATABASE_URL and DIRECT_URL as seen in `example.env`, also generate a random secure token!
+3. Start a postgres server (I use docker locally and the docker compose works btw)
+   Save DATABASE_URL and DIRECT_URL as seen in `example.env` (BOTH WILL BE THE SAME URL IF DOING LOCAL DOCKER POSTGRES), also generate a random secure token!
 
 4. Migrate all changes using Prisma Migrate
 
