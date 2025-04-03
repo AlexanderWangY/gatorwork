@@ -78,7 +78,7 @@
 			<div class="text-md flex flex-row items-center justify-center gap-6">
 				<a class="hover:underline" href="/browse">Discover</a>
 				<HoverMenu menuTitle="Categories" {menuItems} />
-				<a class="hover:underline" href="/sell">Sell</a>
+				<a class="hover:underline" href="/new-listing">Sell</a>
 			</div>
 
 			<!-- Account/Login -->

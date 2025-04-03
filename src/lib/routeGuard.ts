@@ -1,1 +1,1 @@
-export const protectedRoutes: string[] = ['/account', '/create', '/sell'];
+export const protectedRoutes: string[] = ['/account', '/new-listing'];

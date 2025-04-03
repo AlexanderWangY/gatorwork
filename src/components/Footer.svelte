@@ -2,22 +2,18 @@
 <script>
 	// Define social links
 	const socialLinks = [
-		{ name: 'Twitter', url: 'https://twitter.com/yourusername', icon: 'twitter' },
-		{ name: 'GitHub', url: 'https://github.com/yourusername', icon: 'github' },
-		{ name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: 'linkedin' },
-		{ name: 'Instagram', url: 'https://instagram.com/yourusername', icon: 'instagram' }
+		// { name: 'Twitter', url: 'https://twitter.com/yourusername', icon: 'twitter' },
+		{ name: 'GitHub', url: 'https://github.com/AlexanderWangY/gatormarket', icon: 'github' },
+		{ name: 'LinkedIn', url: 'https://linkedin.com/in/AlexanderWangY', icon: 'linkedin' }
+		// { name: 'Instagram', url: 'https://instagram.com/yourusername', icon: 'instagram' }
 	];
 
 	// Define footer links
 	const footerLinks = [
 		{ name: 'Home', url: '/' },
-		{ name: 'About', url: '/about' },
-		{ name: 'Services', url: '/services' },
-		{ name: 'Blog', url: '/blog' },
-		{ name: 'Contact', url: '/contact' }
+		{ name: 'Discover', url: '/Discover' },
+		{ name: 'Make a listing', url: '/new-listing' }
 	];
-
-	const currentYear = new Date().getFullYear();
 </script>
 
 <footer class="bg-brand-black text-brand-white">
@@ -66,7 +62,7 @@
 			<div>
 				<div class="flex flex-col items-center justify-between md:flex-row">
 					<div style="color: #5B5B5B;" class="text-sm">
-						© {currentYear} GatorMarket LLC.
+						GatorMarket is OSS btw. Please contribute! Click the GitHub Logo.
 					</div>
 
 					<div class="mt-4 flex space-x-6 md:mt-0">

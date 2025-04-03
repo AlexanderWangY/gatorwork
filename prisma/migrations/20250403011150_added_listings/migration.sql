@@ -1,0 +1,21 @@
+-- CreateEnum
+CREATE TYPE "Category" AS ENUM ('CARS', 'MOPEDS', 'MOTORCYCLES', 'BICYCLES', 'ELECTRONICS', 'FURNITURE', 'TEXTBOOKS', 'CLOTHING', 'APPLIANCES', 'SPORTS_EQUIPMENT', 'GAMES', 'COMPUTERS', 'HOME_DECOR', 'KITCHENWARE', 'SCHOOL_SUPPLIES', 'ART_SUPPLIES', 'MUSIC_INSTRUMENTS', 'TOOLS');
+
+-- CreateTable
+CREATE TABLE "listing" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT,
+    "price" DOUBLE PRECISION NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "userId" TEXT NOT NULL,
+    "category" "Category" NOT NULL,
+    "views" INTEGER NOT NULL DEFAULT 0,
+    "images" TEXT[],
+
+    CONSTRAINT "listing_pkey" PRIMARY KEY ("id")
+);
+
+-- AddForeignKey
+ALTER TABLE "listing" ADD CONSTRAINT "listing_userId_fkey" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE CASCADE ON UPDATE CASCADE;

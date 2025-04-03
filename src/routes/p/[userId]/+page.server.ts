@@ -8,7 +8,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	return {
 		user: await prisma.user.findUnique({
 			where: { id: userId },
-			select: { id: true, name: true, email: true, image: true }
+			select: { id: true, name: true, email: true, image: true, createdAt: true }
 		})
 	};
 };

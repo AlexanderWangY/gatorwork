@@ -1,13 +1,20 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { Avatar } from 'bits-ui';
+	import { Avatar, Button } from 'bits-ui';
 	import BrandedTooltip from '../../components/BrandedTooltip.svelte';
 	import TablerPencil from '~icons/tabler/pencil';
 	import EditModal from '../../components/Account/EditModal.svelte';
+	import { authClient } from '$lib/auth-client';
+	import { goto } from '$app/navigation';
 
 	export let data;
 
 	let isEditNameModalOpen = false;
+
+	const signOut = async () => {
+		await authClient.signOut();
+		goto('/');
+	};
 </script>
 
 <div class="flex min-h-screen flex-row justify-center">
@@ -71,6 +78,11 @@
 					</div>
 				</div>
 			</div>
+
+			<Button.Root
+				class="text-brand-white mt-8 cursor-pointer rounded-md bg-red-500 px-8 py-1.5 hover:bg-red-300"
+				onclick={signOut}>Log Out</Button.Root
+			>
 
 			<!-- User listings -->
 			<div class="mt-18 flex w-full flex-col gap-8">
