@@ -21,4 +21,27 @@ export const load: PageServerLoad = async ({ request }) => {
 	};
 };
 
-export const actions = {} satisfies Actions;
+export const actions = {
+	editName: async ({ request }) => {
+		// Check if user is authenticated
+		const session = await auth.api.getSession({
+			headers: request.headers
+		});
+
+		if (!session || !session.user) {
+			throw error(401);
+		}
+
+		const data = await request.formData();
+		const name = data.get('name') as string;
+
+		await prisma.user.update({
+			where: { id: session.user.id },
+			data: { name }
+		});
+
+		return {
+			success: true
+		};
+	}
+} satisfies Actions;

@@ -11,6 +11,7 @@
 	import XIcon from './XIcon.svelte';
 	import TablerChevronRight from '~icons/tabler/chevron-right';
 	import TablerChevronLeft from '~icons/tabler/chevron-left';
+	import { afterNavigate } from '$app/navigation';
 
 	type MenuOptions = 'main' | 'categories';
 
@@ -39,6 +40,10 @@
 	const changeCurrentMenu = (option: MenuOptions) => {
 		currentMenu = option;
 	};
+
+	afterNavigate(() => {
+		menuOpen = false;
+	});
 </script>
 
 <div class="flex min-h-16 w-full flex-row items-center justify-center px-5">

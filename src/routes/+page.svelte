@@ -1,11 +1,8 @@
 <script>
 	import { Button } from 'bits-ui';
-	import Footer from '../components/Footer.svelte';
-	import Navbar from '../components/Navbar.svelte';
 	import TablerArrowNarrowRight from '~icons/tabler/arrow-narrow-right';
 </script>
 
-<Navbar />
 <div
 	class="flex w-full flex-col items-center justify-center overflow-hidden py-16 md:py-24 lg:pt-72 lg:pb-36"
 >
@@ -75,4 +72,3 @@
 		</div>
 	</div>
 </div>
-<Footer />
