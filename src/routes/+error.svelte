@@ -1,7 +1,7 @@
 <script>
-	import Button from '../components/CustomButton.svelte';
+	import Button from '../lib/components/CustomButton.svelte';
 	import { goto } from '$app/navigation';
-	import Navbar from '../components/Navbar.svelte';
+	import Navbar from '../lib/components/Navbar.svelte';
 </script>
 
 <Navbar />
