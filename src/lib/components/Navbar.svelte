@@ -163,18 +163,23 @@
 				</Button.Root>
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger>
-						<Avatar.Root class="h-10 w-10 cursor-pointer select-none">
+						<Avatar.Root class="group relative h-10 w-10 cursor-pointer select-none">
 							<Avatar.Image
-								class="aspect-square h-full w-full rounded-full object-cover"
+								class="relative z-10 aspect-square h-full w-full rounded-full object-cover"
 								src={sessionData.user.image ??
 									'https://i.pinimg.com/474x/25/1c/e1/251ce139d8c07cbcc9daeca832851719.jpg'}
 								alt="User Avatar"
 							/>
 							<Avatar.Fallback
-								class="flex aspect-square h-full w-full items-center justify-center rounded-full bg-zinc-200"
+								class="relative z-10 flex aspect-square h-full w-full items-center justify-center rounded-full bg-zinc-200"
 							>
 								UF
 							</Avatar.Fallback>
+
+							<!-- Background Circle Scale on Hover -->
+							<div
+								class="absolute top-1/2 left-1/2 z-0 h-full w-full -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-zinc-300 transition-transform duration-150 ease-in-out group-hover:scale-115"
+							></div>
 						</Avatar.Root>
 					</DropdownMenu.Trigger>
 
@@ -501,6 +506,13 @@
 					<p class="text-brand-black text-lg">Safety Tips</p>
 				</Button.Root>
 			</div>
+		</div>
+
+		<div
+			class="text-brand-gray absolute bottom-0 left-0 flex w-full flex-row items-center justify-between p-4 text-sm underline underline-offset-4"
+		>
+			<Button.Root onclick={closeDrawer} href="/terms">Terms of Service</Button.Root>
+			<Button.Root onclick={closeDrawer} href="/privacy">Privacy Policy</Button.Root>
 		</div>
 	</div>
 </div>
