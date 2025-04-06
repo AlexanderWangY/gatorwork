@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { appSignOut } from '$lib/auth-client.js';
-	import AvatarSection from '$lib/components/Account/AvatarSection.svelte';
-	import EmailSection from '$lib/components/Account/EmailSection.svelte';
-	import NameSection from '$lib/components/Account/NameSection.svelte';
-	import SkeletonLoader from '$lib/components/Account/SkeletonLoader.svelte';
+	import AvatarSection from '$lib/components/account/AvatarSection.svelte';
+	import EmailSection from '$lib/components/account/EmailSection.svelte';
+	import NameSection from '$lib/components/account/NameSection.svelte';
+	import SkeletonLoader from '$lib/components/account/SkeletonLoader.svelte';
 	import { Button } from 'bits-ui';
 
 	export let data;
