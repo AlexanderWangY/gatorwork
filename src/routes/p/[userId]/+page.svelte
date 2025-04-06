@@ -19,7 +19,7 @@
 					<div>
 						<Avatar.Root
 							delayMs={0}
-							class="h-48 w-48 rounded-full text-lg font-medium uppercase "
+							class="aspect-square h-36 rounded-full text-lg font-medium uppercase "
 						>
 							<div
 								class="flex h-full w-full items-center justify-center overflow-hidden rounded-full border border-gray-300"

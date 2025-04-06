@@ -5,7 +5,7 @@
 </script>
 
 <Tooltip.Root delayDuration={200}>
-	<Tooltip.Trigger class="inline-block rounded-full border">
+	<Tooltip.Trigger class="inline-block rounded-full border ">
 		<slot />
 	</Tooltip.Trigger>
 	<Tooltip.Content sideOffset={8}>

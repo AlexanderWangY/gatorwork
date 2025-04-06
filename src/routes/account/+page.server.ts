@@ -16,7 +16,7 @@ export const load: PageServerLoad = async ({ request }) => {
 	return {
 		user: await prisma.user.findUnique({
 			where: { id: session.user.id },
-			select: { name: true, email: true, image: true }
+			select: { name: true, email: true, image: true, id: true }
 		})
 	};
 };
@@ -43,5 +43,28 @@ export const actions = {
 		return {
 			success: true
 		};
+	},
+
+	updateAvatar: async ({ request }) => {
+		const formData = await request.formData();
+		const file = formData.get('avatar') as File;
+
+		const session = await auth.api.getSession({
+			headers: request.headers
+		});
+
+		if (!session || !session.user) {
+			throw error(401);
+		}
+
+		if (!file || !file.type.startsWith('image/')) {
+			throw error(400);
+		}
+
+		console.log('File:', file);
+
+		// Store in bucket here
+
+		return { success: true };
 	}
 } satisfies Actions;

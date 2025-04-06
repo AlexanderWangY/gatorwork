@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { authClient } from '$lib/auth-client';
-	import Button from '../../../components/CustomButton.svelte';
+	import Button from '../../../lib/components/CustomButton.svelte';
 
 	let email = '';
 	let password = '';
