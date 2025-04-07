@@ -124,7 +124,7 @@
 				<!-- Description -->
 				<div class="mt-4 flex flex-col gap-2">
 					<h3 class="text-brand-black text-xl font-normal">Description</h3>
-					<p class="text-brand-gray">{data.listing.description}</p>
+					<pre class="text-brand-gray font-normal">{data.listing.description}</pre>
 				</div>
 
 				<div>

@@ -28,7 +28,7 @@ export const categories: Record<string, Category> = {
 	Tools: Category.TOOLS
 };
 
-export const categoryToReadable: Record<string, string> = {
+export const categoryToReadable: Record<Category, string> = {
 	[Category.APPLIANCES]: 'Appliances',
 	[Category.CARS]: 'Cars',
 	[Category.MOPEDS]: 'Mopeds',

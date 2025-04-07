@@ -31,17 +31,9 @@ export const actions = {
 		const price = form.get('price') as unknown as number;
 		const condition = form.get('condition') as Condition;
 
-		console.log('photos', photos);
-		console.log('title', title);
-		console.log('description', description);
-		console.log('category', category);
-		console.log('price', price);
-		console.log('condition', condition);
-
 		const urls: string[] = [];
 
 		// Upload photos to vercel blob
-
 		for (const photo of photos) {
 			if (!photo || !photo.type.startsWith('image/')) {
 				throw error(400);
