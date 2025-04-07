@@ -13,6 +13,7 @@
 <div class="relative aspect-square w-full overflow-hidden">
 	<Button.Root
 		onclick={() => onClick(idx)}
+		type="button"
 		class="group relative aspect-square w-full cursor-pointer"
 	>
 		<img

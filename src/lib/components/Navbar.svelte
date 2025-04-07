@@ -1,11 +1,11 @@
 <script lang="ts">
 	import TablerChevronDown from '~icons/tabler/chevron-down';
+	import TablerChevronRight from '~icons/tabler/chevron-right';
 	import { onMount } from 'svelte';
 	import { authClient } from '$lib/auth-client';
 	import { Avatar, Button, DropdownMenu } from 'bits-ui';
 	import MingcuteMessage1Line from '~icons/mingcute/message-1-line';
 	import MingcuteBookmarkLine from '~icons/mingcute/bookmark-line';
-	import TablerChevronRight from '~icons/tabler/chevron-right';
 	import MingcuteBox2Line from '~icons/mingcute/box-2-line';
 	import MingcuteSettings1Line from '~icons/mingcute/settings-1-line';
 	import MingcuteExitLine from '~icons/mingcute/exit-line';

@@ -105,13 +105,27 @@
 		class="flex flex-col gap-12"
 		method="POST"
 		action="?/createListing"
-		use:enhance={({ cancel }) => {
+		enctype="multipart/form-data"
+		use:enhance={({ cancel, formData }) => {
 			// Check form validity before enhancing
+
+			console.log('Form submitted');
 			if (files.length === 0) {
 				error = 'Please upload at least one image';
 				cancel();
 				return;
 			}
+
+			if (fileInput) {
+				fileInput.value = '';
+			}
+
+			formData.delete('photos'); // Remove the default file input from FormData
+
+			// Manually append all files from our files array to the FormData
+			files.forEach((file) => {
+				formData.append(`photos`, file);
+			});
 
 			isSubmitting = true;
 			error = null;
@@ -174,7 +188,7 @@
 					bind:this={fileInput}
 					type="file"
 					name="photos"
-					accept="image/*"
+					accept="image/png, image/jpeg, image/jpg, image/webp"
 					multiple
 					on:change={handleFileChange}
 					style="display: none"

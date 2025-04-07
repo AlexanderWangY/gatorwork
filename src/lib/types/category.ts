@@ -28,4 +28,25 @@ export const categories: Record<string, Category> = {
 	Tools: Category.TOOLS
 };
 
+export const categoryToReadable: Record<string, string> = {
+	[Category.APPLIANCES]: 'Appliances',
+	[Category.CARS]: 'Cars',
+	[Category.MOPEDS]: 'Mopeds',
+	[Category.MOTORCYCLES]: 'Motorcycles',
+	[Category.BICYCLES]: 'Bicycles',
+	[Category.ELECTRONICS]: 'Electronics',
+	[Category.FURNITURE]: 'Furniture',
+	[Category.TEXTBOOKS]: 'Textbooks',
+	[Category.CLOTHING]: 'Clothing',
+	[Category.SPORTS_EQUIPMENT]: 'Sports Equipment',
+	[Category.GAMES]: 'Games',
+	[Category.COMPUTERS]: 'Computers',
+	[Category.HOME_DECOR]: 'Home Decor',
+	[Category.KITCHENWARE]: 'Kitchenware',
+	[Category.SCHOOL_SUPPLIES]: 'School Supplies',
+	[Category.ART_SUPPLIES]: 'Art Supplies',
+	[Category.MUSIC_INSTRUMENTS]: 'Music Instruments',
+	[Category.TOOLS]: 'Tools'
+};
+
 export const categoryNames: string[] = Object.keys(categories);

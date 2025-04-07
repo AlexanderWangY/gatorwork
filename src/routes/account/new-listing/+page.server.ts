@@ -5,6 +5,7 @@ import { categories } from '$lib/types/category';
 import type { Condition } from '@prisma/client';
 import { put } from '@vercel/blob';
 import { prisma } from '$lib/server/prisma';
+import sharp from 'sharp';
 
 // This is needed so the server hooks can run for authenticated routes
 export const load: PageServerLoad = async () => {
@@ -46,7 +47,14 @@ export const actions = {
 				throw error(400);
 			}
 
-			const { url } = await put(photo.name, photo, { access: 'public' });
+			const buffer = await photo.arrayBuffer();
+
+			const processedBuffer = await sharp(Buffer.from(buffer))
+				.resize(500, 500, { fit: 'cover' })
+				.jpeg({ quality: 80 })
+				.toBuffer();
+
+			const { url } = await put(photo.name, processedBuffer, { access: 'public' });
 			urls.push(url);
 		}
 
@@ -55,9 +63,10 @@ export const actions = {
 				title,
 				description,
 				category,
-				price,
+				price: Number(price),
 				condition,
 				images: urls,
+				coverImage: urls[0],
 				userId: session.user.id,
 				status: 'ACTIVE'
 			}
