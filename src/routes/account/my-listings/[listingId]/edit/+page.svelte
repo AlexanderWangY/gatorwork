@@ -69,6 +69,7 @@
 				<input
 					type="text"
 					id="title"
+					maxlength="80"
 					name="title"
 					bind:value={title}
 					class="border-brand-gray rounded border p-3 text-lg"
@@ -81,6 +82,7 @@
 				<textarea
 					id="description"
 					name="description"
+					maxlength="1000"
 					bind:value={description}
 					rows="6"
 					class="border-brand-gray rounded border p-3 text-lg"

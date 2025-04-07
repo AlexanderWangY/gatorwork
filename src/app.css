@@ -56,3 +56,7 @@
 	--color-brand-light-orange: #ffd08e;
 	--color-brand-blue: #4057ea;
 }
+
+pre {
+	font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+}
