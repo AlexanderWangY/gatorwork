@@ -2,10 +2,10 @@ import { auth } from '$lib/auth';
 import { error, type Actions } from '@sveltejs/kit';
 import type { PageServerLoad } from '../$types';
 import { categories } from '$lib/types/category';
-import type { Condition } from '@prisma/client';
 import { put } from '@vercel/blob';
 import { prisma } from '$lib/server/prisma';
 import sharp from 'sharp';
+import type { Condition } from '@prisma/client';
 
 // This is needed so the server hooks can run for authenticated routes
 export const load: PageServerLoad = async () => {
