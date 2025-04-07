@@ -100,19 +100,36 @@ enum Category {
   TOOLS
 }
 
-model Listing {
-  id          String   @id @default(uuid())
-  title       String
-  description String?
-  price       Float
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  category    Category
+enum ListingStatus {
+  ACTIVE
+  INACTIVE
+  SOLD
+}
 
-  views  Int      @default(0)
-  images String[]
+enum Condition {
+  NEW
+  LIKE_NEW
+  GOOD
+  FAIR
+  POOR
+}
+
+model Listing {
+  id          String        @id @default(uuid())
+  title       String
+  description String?       @db.Text
+  price       Float
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  userId      String
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category    Category
+  status      ListingStatus
+  condition   Condition
+
+  views      Int      @default(0)
+  images     String[]
+  coverImage String?
 
   @@map("listing")
 }
