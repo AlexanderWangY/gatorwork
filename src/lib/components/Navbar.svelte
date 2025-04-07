@@ -108,7 +108,7 @@
 	<div class="flex flex-row items-center gap-12">
 		<!-- Logo + Brand Name -->
 		<a href="/" class="flex cursor-pointer items-center justify-center gap-3 select-none">
-			<img src="./Logo.svg" alt="GatorMarket Logo" class="aspect-square h-8 lg:h-10" />
+			<img src="/Logo.svg" alt="GatorMarket Logo" class="aspect-square h-8 lg:h-10" />
 			<span class="text-brand-black text-xl font-black lg:text-2xl">GatorMarket</span>
 		</a>
 		<!-- Options -->
@@ -317,7 +317,7 @@
 		{/if}
 		<div class="mx-6 h-6 border-l border-gray-300"></div>
 		<Button.Root
-			href="/new-listing"
+			href="/account/new-listing"
 			class="text-brand-white bg-brand-blue cursor-pointer rounded-md px-10 py-1 text-lg font-bold hover:bg-blue-700"
 		>
 			Sell
@@ -385,7 +385,7 @@
 
 			<Button.Root
 				onclick={closeDrawer}
-				href="/new-listing"
+				href="/account/new-listing"
 				class="bg-brand-blue text-brand-white text-md rounded-md px-20 py-2.5 font-bold hover:bg-blue-700"
 			>
 				List an Item

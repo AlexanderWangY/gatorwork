@@ -32,7 +32,7 @@
 			>
 			<a
 				class="flex flex-row items-center justify-center gap-1 underline-offset-4 hover:underline"
-				href="/new-listing"
+				href="/account/new-listing"
 				>Make a listing
 				<TablerArrowNarrowRight class="text-brand-black inline-block w-5" />
 			</a>

@@ -21,7 +21,7 @@
 	const quickLinks: QuickLink[] = [
 		{ name: 'Home', url: '/' },
 		{ name: 'Discover', url: '/Discover' },
-		{ name: 'Make a Listing', url: '/new-listing' },
+		{ name: 'Make a Listing', url: '/account/new-listing' },
 		{ name: 'About Us', url: '/about' },
 		{ name: 'Blog', url: '/blog' }
 	];
